@@ -47,7 +47,7 @@ const Home = () => {
         getUserPosts
       );
     },
-    [updatePostsPerPage, updateTotalPosts, fetchPosts]
+    [updatePostsPerPage, updateTotalPosts, fetchPosts, category, title]
   );
 
   useEffect(() => {

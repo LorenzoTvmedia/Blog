@@ -14,7 +14,6 @@ import PostsHome from "./pages/home";
 import NotFound from "./pages/404/NotFound";
 import ForgotPassword from "./pages/forgotPassword";
 import ResetPassword from "./pages/resetPassword";
-import Modal from "./components/Modal/Modal";
 import EmailVerification from "./pages/signup/EmailVerification";
 
 // Dynamic Imports (Lazy - loading)
