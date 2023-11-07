@@ -1,0 +1,29 @@
+.modal {
+  position: absolute;
+  inset: 40px;
+  border: 1px solid #b91c1c !important;
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-content > p {
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 1.6rem;
+}

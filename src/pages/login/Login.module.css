@@ -1,0 +1,102 @@
+.login {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+}
+.bg {
+  flex-basis: 50%;
+  background-color: #020d1b;
+  position: relative;
+}
+.bg > img {
+  display: inline-block;
+  flex-basis: 50%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+.formBg {
+  width: 50%;
+  padding: 10rem;
+  background-color: #fff;
+}
+
+.text {
+  margin-bottom: 3rem;
+}
+
+.text > h1 {
+  color: #b91c1c;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+.text > h2 {
+  font-weight: 200;
+}
+
+.p {
+  font-size: 1.4rem;
+  color: #020d1b;
+  margin-top: 1rem;
+  text-align: center;
+  width: 100%;
+}
+.a:link,
+.a:visited {
+  font: inherit;
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #b91c1c;
+}
+
+.a:hover,
+.a:active {
+  text-decoration: underline;
+}
+
+a {
+  &:link,
+  &:visited {
+    display: inline-block;
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.logo {
+  padding: 3rem;
+  flex-basis: 45%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+.logo img {
+  height: 4rem;
+  width: 4rem;
+}
+.logo h3 {
+  margin-left: 1.5rem;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+@media only screen and (max-width: 900px) {
+  .login {
+    width: 70%;
+    margin-top: 8rem;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .login {
+    width: 90%;
+    padding: 1rem;
+    border-radius: 0;
+  }
+}

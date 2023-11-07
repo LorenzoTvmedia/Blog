@@ -1,0 +1,28 @@
+.button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: #fff;
+  padding: 7px;
+  border-radius: 5px;
+  &__nav {
+    background-color: transparent;
+  }
+  &__modal {
+    display: inline-flex;
+    align-items: center;
+    background-color: $primary-color;
+  }
+}
+
+.button:hover {
+  border-radius: 5px;
+}
+.button:focus {
+  border: 1px solid #fff;
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

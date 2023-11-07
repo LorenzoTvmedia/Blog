@@ -1,0 +1,89 @@
+.posts {
+  min-height: 100vh;
+}
+
+.post-list {
+  list-style: none;
+  width: 70%;
+  margin: 4rem auto 2rem;
+
+  @media only screen and (max-width: 1000px) {
+    width: 85%;
+  }
+  @media only screen and (max-width: 768px) {
+    width: 95%;
+  }
+}
+.post-list-title {
+  width: 70%;
+  margin: 4rem auto 2rem;
+  font-size: 4rem;
+  letter-spacing: 2px;
+  color: $primary-color;
+}
+.post-link {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    display: block;
+    font: inherit;
+    color: inherit;
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover,
+  &:active {
+    background-color: $primary-subtle-color;
+  }
+}
+.post-list li {
+  padding: 1rem;
+  border: 0.1rem solid #ddd;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  & > *:not(:last-child) {
+    margin-bottom: 5px;
+  }
+  @media only screen and (max-width: 900px) {
+  }
+}
+
+.post-title {
+  font-size: 2.5rem;
+  color: $primary-color;
+}
+
+.post-info {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0 0 5px;
+  & > span {
+    font-style: normal;
+    display: inline-block;
+    margin: 0 1rem;
+  }
+}
+
+.post-body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: $text-color;
+}
+.post-button {
+  border: none;
+  border-radius: 3rem;
+  width: fit-content;
+  font-size: 1.4rem;
+  padding: 1rem 3rem;
+  background: linear-gradient(to bottom left, #44607c, #2c3e50);
+  color: #ffffff;
+  transition: all 0.3s;
+  @media only screen and (max-width: 600px) {
+    padding: 1rem 2rem;
+  }
+  &:hover {
+    background: linear-gradient(to top left, #44607c, #2c3e50);
+  }
+}
