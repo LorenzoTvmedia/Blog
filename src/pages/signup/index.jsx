@@ -22,7 +22,7 @@ const SignUp = () => {
   }
   const signUpHandler = async (formData) => {
     await fetchUsers({
-      url: `${process.env.REACT_APP_API_BASE_URL}/auth/signup`,
+      url: `${import.meta.env.VITE_API_BASE_URL}/auth/signup`,
       method: "POST",
       body: formData,
       headers: {

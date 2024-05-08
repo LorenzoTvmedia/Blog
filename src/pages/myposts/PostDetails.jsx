@@ -57,7 +57,7 @@ const PostDetails = () => {
     const jwt = document.cookie.split("=")[1];
 
     await fetchRequest({
-      url: `${process.env.REACT_APP_API_BASE_URL}/blogs/${postId}`,
+      url: `${import.meta.env.VITE_API_BASE_URL}/blogs/${postId}`,
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -81,7 +81,7 @@ const PostDetails = () => {
     };
     fetchRequest(
       {
-        url: `${process.env.REACT_APP_API_BASE_URL}/comments`,
+        url: `${import.meta.env.VITE_API_BASE_URL}/comments`,
         method: "POST",
         body: commentDetails,
         headers: {
@@ -103,7 +103,7 @@ const PostDetails = () => {
 
     fetchRequest(
       {
-        url: `${process.env.REACT_APP_API_BASE_URL}/blogs${
+        url: `${import.meta.env.VITE_API_BASE_URL}/blogs${
           postType === "myposts" ? "/my/" : "/"
         }${postId}`,
         headers: {
@@ -120,7 +120,7 @@ const PostDetails = () => {
     };
     fetchRequest(
       {
-        url: `${process.env.REACT_APP_API_BASE_URL}/comments?blogId=${postId}`,
+        url: `${import.meta.env.VITE_API_BASE_URL}/comments?blogId=${postId}`,
         method: "GET",
       },
       getComments

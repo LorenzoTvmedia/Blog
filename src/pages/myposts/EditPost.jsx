@@ -34,7 +34,9 @@ const EditPost = () => {
     const jwt = document.cookie.split("=")[1];
     (async () => {
       await fetchRequest({
-        url: `${process.env.REACT_APP_API_BASE_URL}/blogs/confirmAccess?blogId=${postId}`,
+        url: `${
+          import.meta.env.VITE_API_BASE_URL
+        }/blogs/confirmAccess?blogId=${postId}`,
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${jwt}`,
@@ -44,7 +46,7 @@ const EditPost = () => {
     (async () => {
       await fetchRequest(
         {
-          url: `${process.env.REACT_APP_API_BASE_URL}/blogs/my/${postId}`,
+          url: `${import.meta.env.VITE_API_BASE_URL}/blogs/my/${postId}`,
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${jwt}`,
@@ -81,7 +83,7 @@ const EditPost = () => {
     const jwt = document.cookie.split("=")[1];
 
     await fetchRequest({
-      url: `${process.env.REACT_APP_API_BASE_URL}/blogs/${postId}`,
+      url: `${import.meta.env.VITE_API_BASE_URL}/blogs/${postId}`,
       method: "PATCH",
       body: {
         title: title,

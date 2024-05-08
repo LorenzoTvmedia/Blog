@@ -2,7 +2,7 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 const Pagination = (props) => {
   const { totalPosts, onPageChange, page } = props;
-  const postsPerPage = process.env.REACT_APP_POSTS_PER_PAGE || 2;
+  const postsPerPage = import.meta.env.VITE_POSTS_PER_PAGE || 2;
 
   const total_pages = Math.ceil(totalPosts / postsPerPage);
   console.log(page, total_pages, totalPosts, postsPerPage);

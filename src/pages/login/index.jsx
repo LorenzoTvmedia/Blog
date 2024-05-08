@@ -45,7 +45,7 @@ const Login = () => {
     };
     await fetchUsers(
       {
-        url: `${process.env.REACT_APP_API_BASE_URL}/auth/signin`,
+        url: `${import.meta.env.VITE_API_BASE_URL}/auth/signin`,
         method: "POST",
         body: formData,
         headers: {

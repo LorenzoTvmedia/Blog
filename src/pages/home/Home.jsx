@@ -5,7 +5,7 @@ import useFetch from "../../hooks/useFetch";
 import { AppContext } from "../../store/AppContext";
 import Footer from "../../components/Footer/Footer";
 import { useLocation } from "react-router-dom";
-
+console.log(import.meta.env.VITE_API_BASE_URL, "🎯🎯");
 const Home = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -29,7 +29,7 @@ const Home = () => {
 
       const jwt = document.cookie.split("=")[1];
       const urlObj = new URL(
-        `${process.env.REACT_APP_API_BASE_URL}/blogs?limit=2&page=${page}`
+        `${import.meta.env.VITE_API_BASE_URL}/blogs?limit=2&page=${page}`
       );
       if (title) {
         urlObj.searchParams.append("title", title);
