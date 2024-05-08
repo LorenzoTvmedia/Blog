@@ -17,7 +17,7 @@ const CommentItem = ({ user, comment, user_id, id: commentId }) => {
     if (!areYouSure) return;
     const jwt = document.cookie.split("=")[1];
     await fetchRequest({
-      url: `${process.env.REACT_APP_API_BASE_URL}/comments/${commentId}`,
+      url: `${import.meta.env.VITE_API_BASE_URL}/comments/${commentId}`,
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

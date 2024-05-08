@@ -49,7 +49,7 @@ const AddNewPost = () => {
 
     await fetchPosts(
       {
-        url: `${process.env.REACT_APP_API_BASE_URL}/blogs`,
+        url: `${import.meta.env.VITE_API_BASE_URL}/blogs`,
         method: "POST",
         body: post,
         headers: {

@@ -17,7 +17,7 @@ const EmailVerification = () => {
   useEffect(() => {
     const payload = { emailVerificationToken: emailVerificationToken };
     fetchRequest({
-      url: `${process.env.REACT_APP_API_BASE_URL}/auth/verifyEmail`,
+      url: `${import.meta.env.VITE_API_BASE_URL}/auth/verifyEmail`,
       method: "POST",
       body: payload,
       headers: {

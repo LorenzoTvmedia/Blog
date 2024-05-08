@@ -18,7 +18,7 @@ const PostItem = ({ post }) => {
     const jwt = document.cookie.split("=")[1];
 
     await fetchRequest({
-      url: `${process.env.REACT_APP_API_BASE_URL}/blogs/${post._id}`,
+      url: `${import.meta.env.VITE_API_BASE_URL}/blogs/${post._id}`,
       method: "PATCH",
       body: {
         state: "published",

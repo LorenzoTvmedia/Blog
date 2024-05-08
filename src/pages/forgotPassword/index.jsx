@@ -14,7 +14,7 @@ const ForgotPassword = () => {
     };
     fetchUsers(
       {
-        url: `${process.env.REACT_APP_API_BASE_URL}/auth/forgotPassword`,
+        url: `${import.meta.env.VITE_API_BASE_URL}/auth/forgotPassword`,
         method: "POST",
         body: formData,
         headers: {

@@ -35,7 +35,9 @@ const MyPosts = () => {
       const jwt = document.cookie.split("=")[1];
       fetchUserPosts(
         {
-          url: `${process.env.REACT_APP_API_BASE_URL}/blogs/my?limit=2&page=${page}`,
+          url: `${
+            import.meta.env.VITE_API_BASE_URL
+          }/blogs/my?limit=2&page=${page}`,
           headers: {
             Authorization: `Bearer ${jwt}`,
           },
