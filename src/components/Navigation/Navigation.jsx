@@ -56,7 +56,7 @@ const Navigation = () => {
         <ul>
           {isLoggedIn ? (
             <>
-              <li>
+              {/* <li>
                 <NavLink
                   to="/myposts"
                   className={({ isActive }) =>
@@ -65,11 +65,24 @@ const Navigation = () => {
                 >
                   My Posts
                 </NavLink>
+              </li> */}
+              <li>
+                <Link to="/myposts/addpost">Home</Link>
               </li>
               <li>
-                <Link to="/myposts/addpost">
-                  <AiOutlineEdit /> Write
-                </Link>
+                <Link to="/myposts/addpost">Blog</Link>
+              </li>
+              <li>
+                <Link to="/myposts/addpost">Founder's Series</Link>
+              </li>
+              <li>
+                <Link to="/myposts/addpost">About us</Link>
+              </li>
+              <li>
+                <Link to="/myposts/addpost">Pages</Link>
+              </li>
+              <li>
+                <Link to="/myposts/addpost"><AiOutlineEdit /> Write</Link>
               </li>
               <li>
                 <Button

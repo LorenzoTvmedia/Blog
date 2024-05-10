@@ -6,6 +6,8 @@ import PostItem from "./PostItem";
 import { AppContext } from "../../store/AppContext";
 import Modal from "../Modal/Modal";
 import { useLocation, useNavigate } from "react-router-dom";
+import Heroimage from '../../assets/heroImage.png'
+import './index.css'
 
 const AllPosts = ({
   title,
@@ -48,7 +50,10 @@ const AllPosts = ({
   ) : (
     <div className="posts">
       {isLoading && !totalPosts && <LoadingSpinner type="full" />}
-      <>
+      <div style={{padding: '2rem'}}>
+        <div className="hero">
+          
+        </div>
         <div className="posts__search">
           <form onSubmit={handlePostsSearch}>
             <label htmlFor="categories">Search Posts</label>
@@ -72,7 +77,7 @@ const AllPosts = ({
           </select>
         </div>
         {query && <p>Showing results for "{query}".</p>}
-      </>
+      </div>
       {postsPerPage.length ? (
         <>
           <h3 className="post-list-title">{title}</h3>
