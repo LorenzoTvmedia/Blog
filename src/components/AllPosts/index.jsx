@@ -50,9 +50,11 @@ const AllPosts = ({
   ) : (
     <div className="posts">
       {isLoading && !totalPosts && <LoadingSpinner type="full" />}
-      <div style={{padding: '2rem'}}>
-        <div className="hero">
-          
+      <div style={{padding: '3rem', borderRadius: ''}}>
+        <div className="hero flex flex-col justify-end p-10">
+          <p className="text-[20px] font-sans text-white">Feautured</p>
+          <p className="text-[40px] text-white font-[500]">Founder's Series: Navigating obstacles <br /> in the founder's series</p>
+          <p className="text-[20px] font-sans text-white">The Founder’s Series is a curated collections that honors the visionaries behind <br /> a venture, showcasing their unique journeys, insights, and contributions in a <br /> compelling narrative.</p>
         </div>
         <div className="posts__search">
           <form onSubmit={handlePostsSearch}>

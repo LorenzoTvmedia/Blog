@@ -5,6 +5,7 @@ import Modal from "react-modal";
 import App from "./App";
 import AppContextProvider from "./store/AppContext";
 import "./Stylesheets/main.scss";
+import './index.css'
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 Modal.setAppElement("#root");

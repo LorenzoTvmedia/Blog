@@ -53,7 +53,7 @@ const Navigation = () => {
             <h3>Lorenzo Tv</h3>
           </div>
         </Link>
-        <ul>
+        <ul className="links">
           {isLoggedIn ? (
             <>
               {/* <li>
@@ -84,7 +84,7 @@ const Navigation = () => {
               <li>
                 <Link to="/myposts/addpost"><AiOutlineEdit /> Write</Link>
               </li>
-              <li>
+              {/* <li> */}
                 <Button
                   type="button"
                   className="button button__nav"
@@ -92,7 +92,7 @@ const Navigation = () => {
                 >
                   Logout
                 </Button>
-              </li>
+              {/* </li> */}
             </>
           ) : (
             <>

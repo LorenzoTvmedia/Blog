@@ -11,9 +11,9 @@
   color: $secondary-color;
   justify-content: space-between;
 
-  @media only screen and (max-width: 650px) {
-    flex-wrap: wrap;
-  }
+  // @media only screen and (max-width: 650px) {
+  //   flex-wrap: wrap;
+  // }
 
   & > a {
     &:link,
@@ -28,7 +28,7 @@
   & .logo {
     flex-basis: 45%;
     display: flex;
-    justify-content: flex-start;
+    // justify-content: flex-start;
     align-items: center;
     cursor: pointer;
     & img {
@@ -42,34 +42,36 @@
       text-transform: uppercase;
     }
 
-    @media only screen and (max-width: 650px) {
-      flex-basis: 100%;
-    }
+    // @media only screen and (max-width: 650px) {
+    //   flex-basis: 100%;
+    // }
   }
 
   & ul {
     list-style: none;
     display: flex;
-    justify-content: flex-end;
-    flex-basis: 55%;
-    @media only screen and (max-width: 650px) {
-      flex-basis: 100%;
-      margin-top: 2rem;
-      justify-content: center;
-    }
+    align-items: center;
+    gap: 2rem;
+    // justify-content: flex-end;
+    // flex-basis: 55%;
+    // @media only screen and (max-width: 650px) {
+    //   flex-basis: 100%;
+    //   margin-top: 2rem;
+    //   justify-content: center;
+    // }
     & li {
-      display: flex;
-      align-items: center;
+      // display: flex;
+      // align-items: center;
       & a:link,
       & a:visited {
         text-decoration: none;
-        padding: 0.8rem 1.2rem;
+        // padding: 0.8rem 1.2rem;
         color: inherit;
         border-radius: 0.7rem;
         font-size: 1.5rem;
         cursor: pointer;
         transition: all 0.3s;
-        margin: 0 1rem;
+        // margin: 0 1rem;
       }
 
       & a:hover {
@@ -91,9 +93,9 @@
   top: 0;
 }
 
-@media only screen and (max-width: 900px) {
-  .main__header {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
+// @media only screen and (max-width: 900px) {
+//   .main__header {
+//     display: flex;
+//     flex-wrap: wrap;
+//   }
+// }
