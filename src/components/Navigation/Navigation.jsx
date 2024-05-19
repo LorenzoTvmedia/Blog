@@ -6,6 +6,7 @@ import logo from "../../assets/renzologo.png";
 import { AppContext } from "../../store/AppContext";
 import Button from "../UI/Button";
 // import useFetch from "../../hooks/useFetch";
+import axios from 'axios'
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -38,6 +39,7 @@ const Navigation = () => {
     localStorage.setItem("loggedInUser", JSON.stringify({}));
     navigate("/posts");
   };
+  
 
   return (
     <header className="navigation__container" id="header">
@@ -82,9 +84,9 @@ const Navigation = () => {
                 <Link to="/myposts/addpost">Pages</Link>
               </li>
               <li>
-                <Link to="/myposts/addpost"><AiOutlineEdit /> Write</Link>
+                <Link style={{display:'flex', alignItems:'center'}} to="/myposts/addpost"><AiOutlineEdit /> Write</Link>
               </li>
-              {/* <li> */}
+              <li>
                 <Button
                   type="button"
                   className="button button__nav"
@@ -92,7 +94,7 @@ const Navigation = () => {
                 >
                   Logout
                 </Button>
-              {/* </li> */}
+              </li>
             </>
           ) : (
             <>
