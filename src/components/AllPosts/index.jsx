@@ -9,7 +9,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Categories, Toppost } from "../smallComponents/Smallcomponents";
 
 import Heroimage from '../../assets/heroImage.png'
-import { Feauturedformembers } from "../smallComponents/Smallcomponents";
+import { Feauturedformembers, resentBlogPost } from "../smallComponents/Smallcomponents";
 import './index.css'
 
 const AllPosts = ({
@@ -59,13 +59,13 @@ const AllPosts = ({
           <p className="text-[40px] text-white font-[500]">Founder's Series: Navigating obstacles <br /> in the founder's series</p>
           <p className="text-[20px] font-sans text-white">The Founder's Series is a curated collections that honors the visionaries behind <br /> a venture, showcasing their unique journeys, insights, and contributions in a <br /> compelling narrative.</p>
         </div>
-        <div className="flex justify-between mt-12">
-          <div>
+        <div className="flex space-x-[6rem] mt-12 w">
+          <div className="w-min">
               <div className="posts__search">
                 <form onSubmit={handlePostsSearch}>
                   {/* <label htmlFor="categories" className="">Search Posts</label> */}
                   <input 
-                  className="bg-[#fff] outline-none shadow-lg p-6 w-[200px] rounded-[100px] placeholder:text-[1.3rem]"
+                  className="bg-[#fff] outline-none shadow-lg p-6 w-[250px] rounded-[100px] placeholder:text-[1.3rem]"
                   type="search" 
                   placeholder="Search post"
                   name="query" required />
@@ -93,16 +93,24 @@ const AllPosts = ({
                 <Toppost />
               </div>
           </div>
-          <div>
-            <p className="text-[1.7rem] font-[500]">Featured for members</p>
+          <div className="w-full">
+            <p className="text-[1.7rem] font-[500] border-b-[1px] border-[#999] pb-4">Featured for members</p>
+            <div className="grid grid-cols-2 gap-y-[2rem] mt-10">
+              <Feauturedformembers />
+              <Feauturedformembers />
+              <Feauturedformembers />
+              <Feauturedformembers />
+            </div>
           </div>
+        </div>
+        <div className="grid grid-cols-3">
+          <resentBlogPost />
         </div>
         {query && <p>Showing results for "{query}".</p>}
       </div>
       {postsPerPage.length ? (
         <>
           <h3 className="post-list-title">{title}</h3>
-
           <ul className="post-list">
             {postsPerPage.map((post, index) => (
               <PostItem key={index} post={post} />
