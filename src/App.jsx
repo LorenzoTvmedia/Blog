@@ -15,6 +15,8 @@ import NotFound from "./pages/404/NotFound";
 import ForgotPassword from "./pages/forgotPassword";
 import ResetPassword from "./pages/resetPassword";
 import EmailVerification from "./pages/signup/EmailVerification";
+import Founderseries from "./pages/founderseries/Founderseries";
+import Aboutus from "./pages/aboutus/Aboutus";
 
 // Dynamic Imports (Lazy - loading)
 const Home = lazy(() => import("./pages/home/Home"));
@@ -67,6 +69,10 @@ const App = () => {
               <Route path="edit" element={<EditPost />} />
             </Route>
           </Route>
+
+          <Route path="/aboutus" element={<Aboutus/>}/>
+
+          <Route path="/founderseries" element={<Founderseries/>}/>
 
           {/* Routes that will be matched if none of the route(s) is matched */}
           <Route path="*" element={<NotFound />} />

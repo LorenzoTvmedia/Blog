@@ -6,10 +6,12 @@ import PostItem from "./PostItem";
 import { AppContext } from "../../store/AppContext";
 import Modal from "../Modal/Modal";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Categories, Toppost } from "../smallComponents/Smallcomponents";
+import { Categories, Toppost, Currenttrend } from "../smallComponents/Smallcomponents";
+import Firstbgimage from '../../assets/first.png'
+import Secondbgimage from '../../assets/second.png'
 
 import Heroimage from '../../assets/heroImage.png'
-import { Feauturedformembers, resentBlogPost } from "../smallComponents/Smallcomponents";
+import { Feauturedformembers, Resentblogpost } from "../smallComponents/Smallcomponents";
 import './index.css'
 
 const AllPosts = ({
@@ -59,8 +61,8 @@ const AllPosts = ({
           <p className="text-[40px] text-white font-[500]">Founder's Series: Navigating obstacles <br /> in the founder's series</p>
           <p className="text-[20px] font-sans text-white">The Founder's Series is a curated collections that honors the visionaries behind <br /> a venture, showcasing their unique journeys, insights, and contributions in a <br /> compelling narrative.</p>
         </div>
-        <div className="flex space-x-[6rem] mt-12 w">
-          <div className="w-min">
+        <div className="flex space-x-[7rem] mt-12 w">
+          <div className="w-[]">
               <div className="posts__search">
                 <form onSubmit={handlePostsSearch}>
                   {/* <label htmlFor="categories" className="">Search Posts</label> */}
@@ -94,17 +96,44 @@ const AllPosts = ({
               </div>
           </div>
           <div className="w-full">
-            <p className="text-[1.7rem] font-[500] border-b-[1px] border-[#999] pb-4">Featured for members</p>
-            <div className="grid grid-cols-2 gap-y-[2rem] mt-10">
-              <Feauturedformembers />
-              <Feauturedformembers />
-              <Feauturedformembers />
-              <Feauturedformembers />
+            <p className="text-[2rem] font-[500] border-b-[1px] border-[#999] pb-4">Featured for members</p>
+            <div className="w-[]">
+              <div className="mt-12">
+                <div className="flex items-center gap-[5rem] flex-wrap mb-[5rem]">
+                  <Feauturedformembers />
+                  <Feauturedformembers />
+                </div>
+                <div className="flex items-center gap-[5rem] flex-wrap">
+                  <Feauturedformembers />
+                  <Feauturedformembers />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-3">
-          <resentBlogPost />
+        <div>
+          <p className="text-[2rem] font-[500] border-b-[1px] border-[#999] pb-4">Recent blog posts</p>
+            <div className="mt-[3rem] grid grid-cols-3 gap-y-[5rem]">
+              <Resentblogpost />
+              <Resentblogpost />
+              <Resentblogpost />
+              <Resentblogpost />
+              <Resentblogpost />
+              <Resentblogpost />
+            </div>
+        </div>
+        <div>
+          <p className="text-[2rem] font-[500] border-b-[1px] border-[#999] pb-4 mt-6">Recent blog posts</p>
+          <div className="flex items-center justify-between mt-[4rem] space-y-4 flex-wrap">
+            <Currenttrend 
+            backgroundImage={Firstbgimage} title='Tech the new oil: The Beginner’s Tip' 
+            paragraph='The digital landscape is vast, but every tap and click fuels your learning journey. Dive into the digital reservoir and start your tech journey.'
+            />
+            <Currenttrend 
+            backgroundImage={Secondbgimage} title='Entertainment: Top 100 songs' 
+            paragraph='Dive into the rhythm of the moment, check out the top 100 songs, where beats meet brilliance. From chart-toppers to hidden gems, the playlist promises the hottest tunes.'
+            />
+          </div>
         </div>
         {query && <p>Showing results for "{query}".</p>}
       </div>

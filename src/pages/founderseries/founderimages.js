@@ -1,0 +1,6 @@
+export { default as Founder1 } from '../../assets/founder1.png'
+export { default as Founder2 } from '../../assets/founder2.png'
+export { default as Founder3 } from '../../assets/founder3.png'
+export { default as Founder4 } from '../../assets/founder4.png'
+export { default as Founder5 } from '../../assets/founder5.png'
+export { default as Founder6 } from '../../assets/founder6.png'

@@ -69,16 +69,16 @@ const Navigation = () => {
                 </NavLink>
               </li> */}
               <li>
-                <Link to="/myposts/addpost">Home</Link>
+                <Link to="/myposts">Home</Link>
               </li>
               <li>
                 <Link to="/myposts/addpost">Blog</Link>
               </li>
               <li>
-                <Link to="/myposts/addpost">Founder's Series</Link>
+                <Link to="/founderseries">Founder's Series</Link>
               </li>
               <li>
-                <Link to="/myposts/addpost">About us</Link>
+                <Link to="/aboutus">About us</Link>
               </li>
               <li>
                 <Link to="/myposts/addpost">Pages</Link>
