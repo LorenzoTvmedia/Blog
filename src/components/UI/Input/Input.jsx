@@ -5,7 +5,7 @@ const Input = React.forwardRef((props, ref) => {
 
   return (
     <div className="input__group">
-      <label>{props.label}</label>
+      {/* <label>{props.label}</label> */}
       {field === "input" ? (
         <input {...others} ref={ref} className={className}></input>
       ) : (
