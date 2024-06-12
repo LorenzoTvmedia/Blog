@@ -26,19 +26,21 @@
   }
 
   & .logo {
-    flex-basis: 45%;
+    // flex-basis: 45%;
     display: flex;
     // justify-content: flex-start;
     align-items: center;
+    height: 5rem;
     cursor: pointer;
     & img {
-      height: 4rem;
-      width: 4rem;
+      width: 4.5rem;
     }
     & h3 {
-      margin-left: 2rem;
+      margin-top: 1.2rem;
+      margin-left: .5rem;
       font-size: 2rem;
       letter-spacing: 0.1rem;
+      font-weight: bold;
       text-transform: uppercase;
     }
 
