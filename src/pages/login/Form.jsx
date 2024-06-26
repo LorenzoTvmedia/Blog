@@ -118,6 +118,7 @@ const Form = ({ onSubmit, error, isLoading, success }) => {
 
   return (
     <form className={classes.login__form} onSubmit={submitHandler}>
+       <label htmlFor="">Email</label>
       <Input
         id="email"
         label="Email"
@@ -133,6 +134,7 @@ const Form = ({ onSubmit, error, isLoading, success }) => {
           Please provide a valid email.
         </pre>
       )}
+      <label htmlFor="">Pasword</label>
       <Input
         id="password"
         label="Password"

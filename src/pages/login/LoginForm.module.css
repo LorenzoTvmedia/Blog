@@ -35,9 +35,6 @@
   transition: all 0.3s;
 }
 
-.button:hover {
-  /* background: linear-gradient(to top left, #44607c, #2c3e50); */
-}
 
 .error__message {
   text-align: center;

@@ -75,6 +75,9 @@ const Navigation = () => {
               </li>
               {/* <li>
                 <Link to="/myposts/addpost">Blog</Link>
+              </li>
+              <li>
+                <Link to="/myposts/addpost">Pages</Link>
               </li> */}
               <li>
                 <Link to="/founderseries">Founder's Series</Link>
@@ -82,9 +85,6 @@ const Navigation = () => {
               <li>
                 <Link to="/aboutus">About us</Link>
               </li>
-              {/* <li>
-                <Link to="/myposts/addpost">Pages</Link>
-              </li> */}
               <li>
                 <Link style={{display:'flex', alignItems:'center'}} to="/myposts/addpost"><AiOutlineEdit /> Write</Link>
               </li>
