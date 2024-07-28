@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { ValidatePassword, ValidateEmail } from "../../lib/Validations";
 import { ToastContainer, toast } from "react-toastify";
@@ -10,6 +11,11 @@ import Button from "../../components/UI/Button";
 import classes from "./SignUpForm.module.css";
 import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 // import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
+
+import Line2 from '../../assets/Line 2.png'
+import Google from '../../assets/google.png'
+import Apple from '../../assets/apple.png'
+import Facebook from '../../assets/facebook.png'
 
 const Form = ({ onSubmit, isLoading, error, success }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -218,8 +224,9 @@ const Form = ({ onSubmit, isLoading, error, success }) => {
 
   return (
     <form className={classes.auth__form} onSubmit={submitHandler}>
-      <div className="row">
+      <div className="flex flex-col space-y-[-1rem]">
         <div className="col-md-6 col-sm-12">
+          <label htmlFor="" className="text-[17px] font-[600]">First Name</label>
           <Input
             id="firstname"
             type="text"
@@ -233,12 +240,13 @@ const Form = ({ onSubmit, isLoading, error, success }) => {
           />
           {form.firstnameIsFocus && !form.firstnameIsValid && (
             <pre className={classes.invalid__input}>
-              Please provide a first name that consists of at least two
+              First name should consist of at least two
               characters.
             </pre>
           )}
         </div>
         <div className="col-md-6 col-sm-12">
+          <label htmlFor="" className="text-[17px] font-[600]">Last Name</label>
           <Input
             id="lastname"
             type="text"
@@ -252,30 +260,32 @@ const Form = ({ onSubmit, isLoading, error, success }) => {
           />
           {form.lastnameIsFocus && !form.lastnameIsValid && (
             <pre className={classes.invalid__input}>
-              Please provide a last name that consists of at least two
+              Last name should consist of at least two
               characters.
             </pre>
           )}
         </div>
-      </div>
+        <div>
+          <label htmlFor="" className="text-[17px] font-[600]">Email</label>
+          <Input
+            id="email"
+            type="email"
+            invalid={!form.emailIsValid && form.emailIsFocus ? "invalid" : ""}
+            placeholder="Email Address"
+            value={form.email}
+            onChange={emailOnChangeHandler}
+            onBlur={emailOnBlurHandler}
+          />
+        
+          {form.emailIsFocus && !form.emailIsValid && (
+            <pre className={classes.invalid__input}>
+              Please provide a valid email.
+            </pre>
+          )}
+        </div>
 
-      <Input
-        id="email"
-        type="email"
-        invalid={!form.emailIsValid && form.emailIsFocus ? "invalid" : ""}
-        placeholder="Email Address"
-        value={form.email}
-        onChange={emailOnChangeHandler}
-        onBlur={emailOnBlurHandler}
-      />
-      {form.emailIsFocus && !form.emailIsValid && (
-        <pre className={classes.invalid__input}>
-          Please provide a valid email.
-        </pre>
-      )}
-
-      <div className="row">
         <div className="col-md-6 col-sm-12">
+          <label htmlFor="" className="text-[17px] font-[600]">Password</label>
           <Input
             id="password"
             type={showPassword ? "text" : "password"}
@@ -292,12 +302,13 @@ const Form = ({ onSubmit, isLoading, error, success }) => {
           />
           {form.passwordIsFocus && !form.passwordIsValid && (
             <pre className={classes.invalid__input}>
-              Minimum length(8), uppercase, lowercase, character, number
+              Minimum length(8), uppercase,lowercase,character,number
             </pre>
           )}
         </div>
 
         <div className="col-md-6 col-sm-12">
+          <label htmlFor="" className="text-[17px] font-[600]">Confirm Password</label>
           <Input
             id="confirmpassword"
             type={showConfirmPassword ? "text" : "password"}
@@ -321,6 +332,7 @@ const Form = ({ onSubmit, isLoading, error, success }) => {
           )}
         </div>
       </div>
+
       <div>
         {isLoading && <LoadingSpinner />}
         {!isLoading && error.hasError && (
@@ -358,6 +370,19 @@ const Form = ({ onSubmit, isLoading, error, success }) => {
         >
           Sign Up
         </Button>
+      </div>
+      <div className="flex flex-col space-y-4">
+        <div className="flex items-center justify-center space-x-2 mt-6">
+          <img src={Line2} className="w-[4rem]" alt="" />
+          <p className="font-[700] text-[15px]">Or SIgn Up With</p>
+          <img src={Line2} className="w-[4rem]"  alt="" />
+        </div>
+        <div className="flex items-center justify-center"><p className="text-[15px] text-center font-[600] flex md:hidden lg:hidden">Create an account to become part of this space</p></div>
+        <div className="flex items-baseline justify-center space-x-6">
+          <Link><img className="w-[3rem]" src={Google} alt="" /></Link>
+          <Link><img className="w-[3.2rem]" src={Apple} alt="" /></Link>
+          <Link><img className="w-[5.5rem]" src={Facebook} alt="" /></Link>
+        </div>
       </div>
     </form>
   );

@@ -58,14 +58,14 @@ const AllPosts = ({
       <div className="p-10">
         <div className="hero flex flex-col justify-end p-10">
           <p className="text-[20px] font-sans text-white">Feautured</p>
-          <p className="text-[40px] text-white font-[500]">Founder's Series: Navigating obstacles <br /> in the founder's series</p>
-          <p className="text-[20px] font-sans text-white">The Founder's Series is a curated collections that honors the visionaries behind <br /> a venture, showcasing their unique journeys, insights, and contributions in a <br /> compelling narrative.</p>
+          <p className="text-[40px] text-white font-[800]">Founder's Series: Navigating obstacles <br /> in the founder's series</p>
+          <p className="text-[14px] font-sans text-white">The Founder's Series is a curated collections that honors the visionaries behind <br /> a venture, showcasing their unique journeys, insights, and contributions in a <br /> compelling narrative.</p>
         </div>
         <div className="flex space-x-[7rem] mt-12 w">
-          <div className="w-[]">
+          {/* <div className="w-[]">
               <div className="posts__search">
                 <form onSubmit={handlePostsSearch}>
-                  {/* <label htmlFor="categories" className="">Search Posts</label> */}
+                  <label htmlFor="categories" className="">Search Posts</label>
                   <input 
                   className="bg-[#fff] outline-none shadow-lg p-6 w-[250px] rounded-[100px] placeholder:text-[1.3rem]"
                   type="search" 
@@ -94,7 +94,7 @@ const AllPosts = ({
                 <Categories />
                 <Toppost />
               </div>
-          </div>
+          </div> */}
           <div className="w-full">
             <p className="text-[2rem] font-[500] border-b-[1px] border-[#999] pb-4">Featured for members</p>
             <div className="w-[]">

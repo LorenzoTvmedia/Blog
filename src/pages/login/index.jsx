@@ -59,9 +59,9 @@ const Login = () => {
   return (
     <>
       <div 
-        className="flex bg-[#8C0202]"
+        className="logincon leading-[3rem] overflow-hidden flex items-center justify-between bg-[#8C0202] out"
         data-testid="login__page">
-        <div className={`${classes.bg} h-screen flex flex-col justify-center items-center p-12`}>
+        <div className={`md:w-[100%] lg:w-[50%] hidden md:flex lg:flex flex-col justify-center items-center p-12 bg-[#8C0202] h-screen`}>
           {/* <Link to="/">
             <div
               className={classes.logo}
@@ -72,28 +72,35 @@ const Login = () => {
               <h3 className="font-[600]">Lorenzo Tv</h3>
             </div>
           </Link> */}
-          <div className="flex flex-col justify-center items-center space-y-[2rem]">
+          <div className="loginimage flex flex-col justify-center items-center space-y-[2rem]">
             <div className="lorenzo"><img src={lorenzoTvImg2} alt="lorenzoTV img" /></div>
             <div><p className="text-white text-[20px] text-center font-[700] mt-4">Join Us On The Journey Of Ideas And Discovery</p></div>
           </div>
         </div>
-        <div className={classes.formBg}>
-          <div className='text-center'>
+        <div className={`${classes.seccol} overflow-hidden h-screen w-[100%] flex flex-col justify-center items-center rounded-bl-none rounded-tl-none lg:w-[50%] lg:rounded-l-[61px] md:rounded-l-[61px]`} id="seccol">
+          <div className='text-center mb-[2rem]'>
             <h1 className="font-[800] text-[35px]">Login</h1>
           </div>
-          <Form
-            onSubmit={signInHandler}
-            isLoading={isLoading}
-            error={error}
-            success={success}
-          />
+          <div className="flex flex-col space-y-4">
+            <Form
+              onSubmit={signInHandler}
+              isLoading={isLoading}
+              error={error}
+              success={success}
+            />
 
-          <p className={classes.p}>
-            Do not have an account?
-            <Link to="/signup" className={classes.a}>
-              Create now
-            </Link>
-          </p>
+            <div className="forget w-full gap-10 flex items-center justify-between">
+              <p className='text-[14px] font-[500]'>
+                Do not have an account?
+                <Link to="/signup" style={{color: '#b91c1c'}} className='text-[#b91c1c]'>Sign Up</Link>
+              </p>
+              <p className='text-red-600 text-[1.4rem]'>
+                <Link to="/forgotPassword" className=''>
+                  Forgot password?
+                </Link>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </>

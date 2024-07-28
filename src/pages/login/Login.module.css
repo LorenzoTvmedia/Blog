@@ -1,11 +1,8 @@
-.login {
-  width: 100%;
+.firstcolumn {
+  /* flex-basis: 50%; */
+  width: 50%;
   display: flex;
-  min-height: 100vh;
-}
-.bg {
-  flex-basis: 50%;
-  background-color: #8C0202;
+  /* background-color: #8C0202; */
   position: relative;
 }
 .lorenzo {
@@ -16,7 +13,15 @@
   left: 50%;
   transform: translate(-50%, -50%); */
 }
-.formBg {
+/* .formBg {
+  height: 100vh;
+  width: 50%;
+  padding: 10rem;
+  background-color: #fff;
+  border-radius: 61px 0 0 61px;
+} */
+.seccol{
+  height: 100vh;
   width: 50%;
   padding: 10rem;
   background-color: #fff;
@@ -86,17 +91,25 @@ a {
   color: #fff;
 }
 
-@media only screen and (max-width: 900px) {
-  .login {
-    width: 70%;
-    margin-top: 8rem;
+@media only screen and (max-width: 768px) {
+  .seccol{
+    background-image: url('../../assets/halflogoblur.png');
+    background-position: top right;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(10px);
+  }
+  .forget{
+    width: 100%;
+    background-color: red;
+    justify-content: space-between;
+    gap: 3rem;
   }
 }
 
-@media only screen and (max-width: 650px) {
-  .login {
-    width: 90%;
-    padding: 1rem;
-    border-radius: 0;
-  }
+@media screen and (max-width: 695px) {
+  
+}
+
+@media screen and (max-width: 650px) {
+  
 }

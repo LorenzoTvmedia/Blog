@@ -10,6 +10,11 @@ import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 import { AppContext } from "../../store/AppContext";
 
 import classes from "./LoginForm.module.css";
+
+import Line2 from '../../assets/Line 2.png'
+import Google from '../../assets/google.png'
+import Apple from '../../assets/apple.png'
+import Facebook from '../../assets/facebook.png'
 // import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 const Form = ({ onSubmit, error, isLoading, success }) => {
   const navigate = useNavigate();
@@ -117,8 +122,8 @@ const Form = ({ onSubmit, error, isLoading, success }) => {
   };
 
   return (
-    <form className={classes.login__form} onSubmit={submitHandler}>
-       <label htmlFor="">Email</label>
+    <form className='w-full' onSubmit={submitHandler}>
+       <label htmlFor="" className="text-[20px] font-[700]">Email</label>
       <Input
         id="email"
         label="Email"
@@ -128,13 +133,14 @@ const Form = ({ onSubmit, error, isLoading, success }) => {
         value={form.email}
         onChange={emailOnChangeHandler}
         onBlur={emailOnBlurHandler}
+        className='mt-4'
       />
       {form.emailIsFocus && !form.emailIsValid && (
         <pre className={classes.invalid__input}>
           Please provide a valid email.
         </pre>
       )}
-      <label htmlFor="">Pasword</label>
+      <label htmlFor="" className="text-[20px] font-[700]">Pasword</label>
       <Input
         id="password"
         label="Password"
@@ -147,12 +153,9 @@ const Form = ({ onSubmit, error, isLoading, success }) => {
         passwordIcon={true}
         showPassword={showPassword}
         setShowPassword={setShowPassword}
+        className='mt-4'
       />
-      <p className={classes.p}>
-        <Link to="/forgotPassword" className={classes.a}>
-          Forgot password?
-        </Link>
-      </p>
+      
       {form.passwordIsFocus && !form.passwordIsValid && (
         <pre className={classes.invalid__input}>
           MinLength(8), uppercase, lowercase, character, number
@@ -187,15 +190,28 @@ const Form = ({ onSubmit, error, isLoading, success }) => {
         )}
       </div>
 
-      <div className={classes.btn__box}>
+      <div className='flex justify-center items-center'>
         <Button
           disabled={!formIsValid}
           id="btn__submit"
           type="submit"
           className={classes.button}
         >
-          Login
+          LOG IN
         </Button>
+      </div>
+      <div className="flex flex-col space-y-4">
+        <div className="flex items-center justify-center space-x-2 mt-6">
+          <img src={Line2} className="w-[4rem]" alt="" />
+          <p className="font-[700] text-[15px]">Or Log In With</p>
+          <img src={Line2} className="w-[4rem]"  alt="" />
+        </div>
+        <div className="flex items-center justify-center"><p className="text-[15px] text-center font-[600] flex md:hidden lg:hidden">Join us on the journey of ideas and discovery</p></div>
+        <div className="flex items-baseline justify-center space-x-6">
+          <Link><img className="w-[3rem]" src={Google} alt="" /></Link>
+          <Link><img className="w-[3.2rem]" src={Apple} alt="" /></Link>
+          <Link><img className="w-[5.5rem]" src={Facebook} alt="" /></Link>
+        </div>
       </div>
     </form>
   );

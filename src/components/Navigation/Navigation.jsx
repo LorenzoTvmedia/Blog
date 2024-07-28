@@ -4,7 +4,7 @@ import { AiOutlineEdit } from "react-icons/ai";
 
 import logo from "../../assets/renzologo.png";
 import Logo1 from '../../assets/logo1.jpeg'
-import Logo2 from '../../assets/logo1_prev_ui.png'
+import Logo2 from '../../assets/newlogo.png'
 import { AppContext } from "../../store/AppContext";
 import Button from "../UI/Button";
 // import useFetch from "../../hooks/useFetch";
@@ -53,13 +53,13 @@ const Navigation = () => {
               navigate("/posts");
             }}
           >
-            <img className="" src={Logo2} alt="Lorenzo Tv" />
-            <h3>LorenzoTvBlog</h3>
+            <div><img className="" src={Logo2} alt="Lorenzo Tv" /></div>
+            <h3 className="text-[#8C0202]na">LorenzoTvBlog</h3>
           </div>
         </Link>
         <ul className="links">
           {isLoggedIn ? (
-            <>
+            <ul className="navlinks">
               {/* <li>
                 <NavLink
                   to="/myposts"
@@ -70,41 +70,42 @@ const Navigation = () => {
                   My Posts
                 </NavLink>
               </li> */}
-              <li>
-                <Link to="/myposts">Home</Link>
+              <li className="signuplist">
+                <Link to="/myposts" className="signup">Home</Link>
               </li>
               {/* <li>
                 <Link to="/myposts/addpost">Blog</Link>
-              </li>
-              <li>
-                <Link to="/myposts/addpost">Pages</Link>
               </li> */}
-              <li>
-                <Link to="/founderseries">Founder's Series</Link>
+              <li className="signuplist">
+                <Link to="/founderseries" className="signup">Founder's Series</Link>
               </li>
-              <li>
-                <Link to="/aboutus">About us</Link>
+              <li className="signuplist">
+                <Link to="/aboutus" className="signup">About us</Link>
               </li>
-              <li>
-                <Link style={{display:'flex', alignItems:'center'}} to="/myposts/addpost"><AiOutlineEdit /> Write</Link>
+              <li className="signuplist">
+                <Link style={{display:'flex', alignItems:'center'}} to="/myposts/addpost" className="signup"><AiOutlineEdit /> Write</Link>
               </li>
-              <li>
+              <li className="flex items-center">
+                <span className="flex items-center">
+                  <img src="" alt="" />
+                  <p>Kabir yousuf</p>
+                </span>
                 <Button
                   type="button"
-                  className="button button__nav text-[1.3rem] bg-white text-red-600 font-[600] rounded-[100px] px-4"
+                  className="button button__nav text-[1.3rem] bg-white text-red-600 font-[600] rounded-md px-4"
                   onClick={logOutHandler}
                 >
                   Logout
                 </Button>
               </li>
-            </>
+            </ul>
           ) : (
             <>
-              <li>
-                <Link to="/signup">Sign up free</Link>
+              <li className="relative signuplist">
+                <Link to="/login" className="signup" style={{color: "black"}}>Log in</Link>
               </li>
-              <li>
-                <Link to="/login">Log in</Link>
+              <li className="relative signuplist">
+                <Link to="/signup" className="bg-[#8C0202] p-[.7rem] rounded-md" style={{color: "white"}}>Sign up free </Link>
               </li>
             </>
           )}
