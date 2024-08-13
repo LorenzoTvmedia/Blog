@@ -9,9 +9,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Categories, Toppost, Currenttrend } from "../smallComponents/Smallcomponents";
 import Firstbgimage from '../../assets/first.png'
 import Secondbgimage from '../../assets/second.png'
+import Heronew from '../../assets/newhero.png'
 
 import Heroimage from '../../assets/heroImage.png'
-import { Feauturedformembers, Resentblogpost } from "../smallComponents/Smallcomponents";
+import { Feauturedformembers, Resentblogpost, Topic, Resentpost } from "../smallComponents/Smallcomponents";
 import './index.css'
 
 const AllPosts = ({
@@ -45,7 +46,7 @@ const AllPosts = ({
   };
 
   return error.hasError ? (
-    <div className="posts">
+    <div className="posts w-full bg-blue-400">
       <Modal
         showModal={error.hasError}
         closeModal={closeModal}
@@ -53,90 +54,41 @@ const AllPosts = ({
       />
     </div>
   ) : (
-    <div className="posts">
+    <div className="posts w-full p-10">
       {isLoading && !totalPosts && <LoadingSpinner type="full" />}
-      <div className="p-10">
-        <div className="hero flex flex-col justify-end p-10">
-          <p className="text-[20px] font-sans text-white">Feautured</p>
-          <p className="text-[40px] text-white font-[800]">Founder's Series: Navigating obstacles <br /> in the founder's series</p>
-          <p className="text-[14px] font-sans text-white">The Founder's Series is a curated collections that honors the visionaries behind <br /> a venture, showcasing their unique journeys, insights, and contributions in a <br /> compelling narrative.</p>
+        <div className="hero my-[2rem] relative -z-50">
+          <div className="w-full p-8 flex flex-col justify-center items-start absolute bottom-0">
+            <p className="lg:text-[20px] text-[14px] font-sans text-white">Feautured</p>
+            <p className="lg:text-[40px] md:text-[24px] text-[18px] text-white font-[800]">Founder's Series: Navigating obstacles <br /> in the founder's series</p>
+            <p className="lg:text-[16px] text-[14px] font-sans text-white lg:w-[50%] md:w-[70%]">The Founder's Series is a curated collections that honors the visionaries behind a venture, showcasing their unique journeys, insights, and contributions in a compelling narrative.</p>
+          </div>
         </div>
-        <div className="flex space-x-[7rem] mt-12 w">
-          {/* <div className="w-[]">
-              <div className="posts__search">
-                <form onSubmit={handlePostsSearch}>
-                  <label htmlFor="categories" className="">Search Posts</label>
-                  <input 
-                  className="bg-[#fff] outline-none shadow-lg p-6 w-[250px] rounded-[100px] placeholder:text-[1.3rem]"
-                  type="search" 
-                  placeholder="Search post"
-                  name="query" required />
-                </form>
-              </div>
-              <div className="posts__query mt-4">
-                <label htmlFor="categories" className="text-[#A1A1A1] text-[1.2rem]">Filter by category:</label>
-                <select
-                  className="p-2 outline-none bg-transparent border-[1px] border-[#D9D9D9] rounded-[100px] w-[140px] text-[#A1A1A1]"
-                  name="categories"
-                  id="categories"
-                  onChange={handlePostsFilterByCategory}
-                  value={category ? category : "All"}
-                >
-                  <option value="All">All</option>
-                  <option value="Technology">Technology</option>
-                  <option value="Finance">Finance</option>
-                  <option value="Entertainment">Entertainment</option>
-                  <option value="Movies">Movies</option>
-                  <option value="Self-help">Self-help</option>
-                </select>
-              </div>
-              <div className="mt-14 flex items-center space-y-10 flex-col">
-                <Categories />
-                <Toppost />
-              </div>
-          </div> */}
-          <div className="w-full">
-            <p className="text-[2rem] font-[500] border-b-[1px] border-[#999] pb-4">Featured for members</p>
-            <div className="w-[]">
-              <div className="mt-12">
-                <div className="flex items-center gap-[5rem] flex-wrap mb-[5rem]">
-                  <Feauturedformembers />
-                  <Feauturedformembers />
-                </div>
-                <div className="flex items-center gap-[5rem] flex-wrap">
-                  <Feauturedformembers />
-                  <Feauturedformembers />
-                </div>
-              </div>
-            </div>
+        <p className="text-[28px] font-[700] pb-4">Popular Topics</p>
+        <div className="flex items-center space-x-6 topics">
+          <button>All</button>
+          <button>Technology</button>
+          <button>Finance</button>
+          <button>Entertainment</button>
+          <button>Movies</button>
+        </div>
+        <div className="mt-12 mb-[5rem]">
+          <Topic className=''/>
+        </div>
+        <div className="mt-[3rem]">
+          <p className="text-[28px] font-[700] pb-4">Founder's Series</p>
+          <div className="hero2 flex flex-col space-y-4 items-center justify-center p-10 lg:text-left text-center">
+            <p className="lg:text-[36px] md:text-[29px] text-[20px] text-white font-[800] capitalize">osholola daniel  founder of go link</p>
+            <p className="lg:text-[16px] text-[14px] font-sans text-white text-center lg:w-[50%] md:w-[70%]">The Founder's Series is a curated collections that honors the visionaries behind a venture, showcasing their unique journeys, insights, and contributions in a compelling narrative.</p>
           </div>
         </div>
         <div>
-          <p className="text-[2rem] font-[500] border-b-[1px] border-[#999] pb-4">Recent blog posts</p>
-            <div className="mt-[3rem] grid grid-cols-3 gap-y-[5rem]">
-              <Resentblogpost />
-              <Resentblogpost />
-              <Resentblogpost />
-              <Resentblogpost />
-              <Resentblogpost />
-              <Resentblogpost />
-            </div>
-        </div>
-        <div>
-          <p className="text-[2rem] font-[500] border-b-[1px] border-[#999] pb-4 mt-6">Recent blog posts</p>
-          <div className="flex items-center justify-between mt-[4rem] space-y-4 flex-wrap">
-            <Currenttrend 
-            backgroundImage={Firstbgimage} title='Tech the new oil: The Beginner’s Tip' 
-            paragraph='The digital landscape is vast, but every tap and click fuels your learning journey. Dive into the digital reservoir and start your tech journey.'
-            />
-            <Currenttrend 
-            backgroundImage={Secondbgimage} title='Entertainment: Top 100 songs' 
-            paragraph='Dive into the rhythm of the moment, check out the top 100 songs, where beats meet brilliance. From chart-toppers to hidden gems, the playlist promises the hottest tunes.'
-            />
+          <p className="text-[28px] font-[700] mt-[5rem] mb-[2rem] pb-4">Recent blog posts</p>
+          <div className="mb-[]">
+            <Resentpost />
           </div>
+          <div className="flex items-center justify-center mt-[5rem]"><button className="bg-[#8C0202] text-white rounded-md text-[16px] font-[500] py-[.2rem] px-[2rem]">Load More</button></div>
         </div>
         {query && <p>Showing results for "{query}".</p>}
-      </div>
       {postsPerPage.length ? (
         <>
           <h3 className="post-list-title">{title}</h3>

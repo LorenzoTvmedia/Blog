@@ -1,21 +1,15 @@
 .main__header {
-  // background-image: linear-gradient(
-  //   to right,
-  //   $primary-light-color,
-  //   $primary-color
-  // );
-  background-color: #F2EEEE;
   color: black;
+  height: 8rem;
   padding: 2.5rem 3rem;
   display: flex;
   align-items: center;
   font-family: "Inter", sans-serif;
   color: $secondary-color;
   justify-content: space-between;
-
-  // @media only screen and (max-width: 650px) {
-  //   flex-wrap: wrap;
-  // }
+  // background-color: transparent;
+  // backdrop-filter: blur(15px);
+  background-color: white;
 
   & > a {
     &:link,
@@ -27,16 +21,11 @@
   }
 
   & .logo {
-    // flex-basis: 45%;
     display: flex;
-    // justify-content: flex-start;
     align-items: center;
     gap: 1rem;
     
     cursor: pointer;
-    & img {
-      width: 2.7rem;
-    }
     & h3 {
       margin-left: .5rem;
       font-size: 21px;
@@ -45,34 +34,6 @@
       text-transform: uppercase;
     }
   }
-
-
-  // ul {
-  //   list-style: none;
-  //   display: flex;
-  //   align-items: center;
-  //   gap: 2rem;
-  //   & li {
-  //     & a:link,
-  //     & a:visited {
-  //       text-decoration: none;
-  //       // padding: 0.8rem 1.2rem;
-  //       color: inherit;
-  //       border-radius: 0.7rem;
-  //       font-size: 1.5rem;
-  //       cursor: pointer;
-  //       transition: all 0.3s;
-  //       // margin: 0 1rem;
-  //     }
-
-  //     & a:hover {
-  //       text-decoration: underline;
-  //     }
-  //   }
-  // }
-}
-.link{
-  color: black;
 }
 .navlinks, .links{
   display: flex;
@@ -81,19 +42,19 @@
   gap: 2rem;
 }
 
-ul .signup{
+ul .link{
   position: relative;
   font-size: 1.3rem;
   font-weight: 600;
 }
 
-.signup::before{
+.link::before{
   position: absolute;
   content: '';
   bottom: -.3rem;
   right: 0;
   width: 100%;
-  background-color: #8C0202;
+  background-color: #8C0202;  
   height: .2rem;
   transform: scale(0);
   transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -101,9 +62,10 @@ ul .signup{
 .signuplist{
   position: relative;
   color: black;
+  font-size: 1.3rem;
+  font-weight: 600;
 }
-
-.signuplist .signup:hover::before{
+.signuplist .link:hover::before{
   // width: 100%;
   transform: scale(1);
 }
@@ -113,16 +75,53 @@ ul .signup{
   color: $primary-subtle-color !important;
   background-color: rgba($secondary-dark-color, 0.6);
 }
-.sticky {
-  width: 100%;
-  position: fixed;
-  background-color: rgba(135, 132, 132, 0.928);
-  z-index: 100;
-  top: 0;
+
+@media screen and (max-width: 790px) {
+  .main__header .logo h3 {
+    font-size: 19px;
+  }
+  .navlinks{
+    gap: 1.8rem;
+  }
 }
 
-@media only screen and (max-width: 500px) {
-  h3{
-    font-size: 18px;
+@media screen and (max-width: 769px) {
+  .main__header{
+    backdrop-filter: blur(3px);
+    background-color: #8C0202;
+    border-radius: 20px;
+  }
+  .main__header .logo h3{
+    font-size: 16px;
+    margin-right: 1rem;
+  }
+  .signuplist{
+    color: white;
+  }
+  .main__header .logo h3, .user{
+    @apply text-white
+  }
+  .navlinks, .logout{
+    display: none;
+  }
+  .links{
+    // width: 45%;
+    // justify-content: space-between;
+    // background-color: blue;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .main__header .logo h3{
+    font-size: 14px;
+  }
+  .links{
+    gap: .8rem;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .main__header .logo h3{
+    font-size: 12px;
   }
 }

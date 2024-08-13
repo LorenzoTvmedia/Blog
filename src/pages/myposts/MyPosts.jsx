@@ -54,16 +54,18 @@ const MyPosts = () => {
 
   return (
     <>
-      <Navigation />
-      <AllPosts
-        isLoading={isLoading}
-        error={error}
-        title="My Posts"
-        page={page}
-        onPageChange={handlePageChange}
-        clearError={clearError}
-      />
-      <Footer />
+      <div className="">
+        <Navigation />
+        <AllPosts
+          isLoading={isLoading}
+          error={error}
+          title="My Posts"
+          page={page}
+          onPageChange={handlePageChange}
+          clearError={clearError}
+        />
+        <div className=""><Footer /></div>
+      </div>
     </>
   );
 };

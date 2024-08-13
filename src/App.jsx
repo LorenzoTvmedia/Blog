@@ -70,7 +70,7 @@ const App = () => {
             </Route>
           </Route>
 
-          <Route path="/aboutus" element={<Aboutus/>}/>
+          <Route path="https://lorenzotvmedia.netlify.app/about" element={<Aboutus/>}/>
 
           <Route path="/founderseries" element={<Founderseries/>}/>
 

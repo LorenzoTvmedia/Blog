@@ -112,7 +112,7 @@ const AddNewPost = () => {
                 onChange={bodyOnChangeHandler}
                 required={true}
               />
-              <div className="input__group">
+              {/* <div className="input__group">
                 <label htmlFor="categories">Select category</label>
 
                 <select
@@ -130,7 +130,7 @@ const AddNewPost = () => {
                   <option value="Movies">Movies</option>
                   <option value="Self-help">Self-help</option>
                 </select>
-              </div>
+              </div> */}
 
               <div className="new__post--box">
                 <Button type="submit" className="new__post--button">
@@ -154,16 +154,16 @@ const AddNewPost = () => {
               </div>
             </div>
           </div>
-          <div className="w-full bg-white">
+          {/* <div className="w-full bg-white">
             <p className="p-6 border-b-[.1rem] border-[#ccc] text-[1.3rem] font-[700]">Format</p>
             <ul className="p-6 flex flex-col space-y-4">
-              <li className="flex items-center gap-[2rem] text-[13px] font-[500]"><span className="flex items-center space-x-2"><input type="radio" /> <TiPin className="text-[1.4rem]"/></span> Standard</li>
+              <li className="flex items-center gap-[2rem] text-[13px] font-[500]"><span className="flex items-center space-x-2"><input type="radio" /> <TiPin className="text-[1.4rem]"/></span> </li>
               <li className="flex items-center gap-[2rem] text-[13px] font-[500]"><span className="flex items-center space-x-2"><input type="radio" /> <CgFileDocument className="text-[1.4rem]"/></span> Aside</li>
               <li className="flex items-center gap-[2rem] text-[13px] font-[500]"><span className="flex items-center space-x-2"><input type="radio" /> <FaImage className="text-[1.4rem]"/></span> Image</li>
               <li className="flex items-center gap-[2rem] text-[13px] font-[500]"><span className="flex items-center space-x-2"><input type="radio" /> <GoVideo className="text-[1.4rem]"/></span> Video</li>
               <li className="flex items-center gap-[2rem] text-[13px] font-[500]"><span className="flex items-center space-x-2"><input type="radio" /> <GoLink className="text-[1.4rem]"/></span> Link</li>
             </ul>
-          </div>
+          </div> */}
           <div className="w-full bg-white">
             <p className="p-6 border-b-[.1rem] border-[#ccc] text-[1.3rem] font-[700]">Format</p>
             <ul className="p-6 flex items-center gap-6">
@@ -171,11 +171,11 @@ const AddNewPost = () => {
               <li  className="text-[1.2rem]"><a href="">Most Used</a></li>
             </ul>
             <ul className="p-6 flex flex-col space-y-4">
-              <li className="flex items-center gap-[1rem] text-[13px] font-[500]"><input type="checkbox" /> Standard</li>
-              <li className="flex items-center gap-[1rem] text-[13px] font-[500]"><input type="checkbox" /> Aside</li>
-              <li className="flex items-center gap-[1rem] text-[13px] font-[500]"><input type="checkbox" /> Image</li>
-              <li className="flex items-center gap-[1rem] text-[13px] font-[500]"><input type="checkbox" /> Video</li>
-              <li className="flex items-center gap-[1rem] text-[13px] font-[500]"><input type="checkbox" /> Link</li>
+              <li className="flex items-center gap-[1rem] text-[13px] font-[500]"><input type="checkbox" /> Technology</li>
+              <li className="flex items-center gap-[1rem] text-[13px] font-[500]"><input type="checkbox" /> Finance</li>
+              <li className="flex items-center gap-[1rem] text-[13px] font-[500]"><input type="checkbox" /> Entertainment</li>
+              <li className="flex items-center gap-[1rem] text-[13px] font-[500]"><input type="checkbox" /> Movies</li>
+              <li className="flex items-center gap-[1rem] text-[13px] font-[500]"><input type="checkbox" /> Self Help</li>
             </ul>
           </div>
         </div>

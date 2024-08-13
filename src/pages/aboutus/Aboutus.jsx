@@ -11,14 +11,14 @@ import { Eachmembers } from '../../components/smallComponents/Smallcomponents'
 
 function Aboutus() {
   return (
-    <div className='overflow-hidden'>
+    <div className='overflow bg-yellow-400'>
       <div 
         className='w-full bg-red-500 h-screen bg-no-repeat bg-cover'
         style={{ backgroundImage: `url(${About3})` }}>
         <Navigation />
         {/* <div className='flex flex-col justify-center items-center mt-[20rem]'>
             <p className='text-[4.5rem] font-[700]'>About Us</p>
-            <p className='text-[1.5rem]'>Home/About Us</p>
+            <p className='text-[1.5Srem]'>Home/About Us</p>
         </div> */}
       </div>
       <div className="flex items-center justify-center space-x-6 mt-20">
@@ -35,9 +35,9 @@ function Aboutus() {
             </div>
             <div className="w-[35%]"><img className="w-full" src={Flower} alt="" /></div>
        </div>
-       <div className='flex flex-col items-center justify-center mt-[6rem]'>
+       <div className='flex flex-col items-center justify mt-[6rem]'>
             <p className='text-[2.5rem] font-[550] mb-6'>All Members</p>
-            <div className='flex items-center space-x-10'>
+            <div className='flex items-center flex-wrap p-10 gap-10'>
                 <Eachmembers Member={Member} name='Bene Abiola' role='Founder'/>
                 <Eachmembers Member={Member} name='Bene Abiola' role='Founder'/>
                 <Eachmembers Member={Member} name='Bene Abiola' role='Founder'/>

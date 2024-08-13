@@ -17,3 +17,28 @@
     font-weight: bold;
     color: #ff6347; /* Tomato color */
 }
+.image{
+    @apply w-[400px]
+}
+.item{
+    @apply w-[400px] flex flex-col space-y-0
+}
+.topic{
+    @apply text-[1.8rem]
+}
+@media screen and (max-width: 856px) {
+    .item{
+        @apply w-full bg-red-300 flex-row space-x-6 space-y-[2rem] items-center
+    }
+    .image{
+        @apply w-[700px]
+    }
+}
+@media screen and (max-width: 600px) {
+    .item{
+        @apply items-center
+    }
+    .topic{
+        @apply text-[1.4rem]
+    }
+}
