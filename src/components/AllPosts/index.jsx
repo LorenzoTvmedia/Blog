@@ -55,40 +55,43 @@ const AllPosts = ({
     </div>
   ) : (
     <div className="posts w-full p-10">
-      {isLoading && !totalPosts && <LoadingSpinner type="full" />}
-        <div className="hero my-[2rem] relative -z-50">
-          <div className="w-full p-8 flex flex-col justify-center items-start absolute bottom-0">
-            <p className="lg:text-[20px] text-[14px] font-sans text-white">Feautured</p>
-            <p className="lg:text-[40px] md:text-[24px] text-[18px] text-white font-[800]">Founder's Series: Navigating obstacles <br /> in the founder's series</p>
-            <p className="lg:text-[16px] text-[14px] font-sans text-white lg:w-[50%] md:w-[70%]">The Founder's Series is a curated collections that honors the visionaries behind a venture, showcasing their unique journeys, insights, and contributions in a compelling narrative.</p>
+      {isLoading && !totalPosts ? <LoadingSpinner className='' type="full" /> :(
+        <>
+          <div className="hero my-[2rem] relative -z-50">
+            <div className="w-full p-8 flex flex-col justify-center items-start absolute bottom-0">
+              <p className="lg:text-[20px] text-[14px] font-sans text-white">Feautured</p>
+              <p className="lg:text-[40px] md:text-[24px] text-[18px] text-white font-[800]">Founder's Series: Navigating obstacles <br /> in the founder's series</p>
+              <p className="lg:text-[16px] text-[14px] font-sans text-white lg:w-[50%] md:w-[70%]">The Founder's Series is a curated collections that honors the visionaries behind a venture, showcasing their unique journeys, insights, and contributions in a compelling narrative.</p>
+            </div>
           </div>
-        </div>
-        <p className="text-[28px] font-[700] pb-4">Popular Topics</p>
-        <div className="flex items-center space-x-6 topics">
-          <button>All</button>
-          <button>Technology</button>
-          <button>Finance</button>
-          <button>Entertainment</button>
-          <button>Movies</button>
-        </div>
-        <div className="mt-12 mb-[5rem]">
-          <Topic className=''/>
-        </div>
-        <div className="mt-[3rem]">
-          <p className="text-[28px] font-[700] pb-4">Founder's Series</p>
-          <div className="hero2 flex flex-col space-y-4 items-center justify-center p-10 lg:text-left text-center">
-            <p className="lg:text-[36px] md:text-[29px] text-[20px] text-white font-[800] capitalize">osholola daniel  founder of go link</p>
-            <p className="lg:text-[16px] text-[14px] font-sans text-white text-center lg:w-[50%] md:w-[70%]">The Founder's Series is a curated collections that honors the visionaries behind a venture, showcasing their unique journeys, insights, and contributions in a compelling narrative.</p>
+          <p className="text-[28px] font-[700] pb-4">Popular Topics</p>
+          <div className="flex items-center space-x-6 topics">
+            <button>All</button>
+            <button>Technology</button>
+            <button>Finance</button>
+            <button>Entertainment</button>
+            <button>Movies</button>
           </div>
-        </div>
-        <div>
-          <p className="text-[28px] font-[700] mt-[5rem] mb-[2rem] pb-4">Recent blog posts</p>
-          <div className="mb-[]">
-            <Resentpost />
+          <div className="mt-12 mb-[5rem]">
+            <Topic className=''/>
           </div>
-          <div className="flex items-center justify-center mt-[5rem]"><button className="bg-[#8C0202] text-white rounded-md text-[16px] font-[500] py-[.2rem] px-[2rem]">Load More</button></div>
-        </div>
-        {query && <p>Showing results for "{query}".</p>}
+          <div className="mt-[3rem]">
+            <p className="text-[28px] font-[700] pb-4">Founder's Series</p>
+            <div className="hero2 flex flex-col space-y-4 items-center justify-center p-10 lg:text-left text-center">
+              <p className="lg:text-[36px] md:text-[29px] text-[20px] text-white font-[800] capitalize">osholola daniel  founder of go link</p>
+              <p className="lg:text-[16px] text-[14px] font-sans text-white text-center lg:w-[50%] md:w-[70%]">The Founder's Series is a curated collections that honors the visionaries behind a venture, showcasing their unique journeys, insights, and contributions in a compelling narrative.</p>
+            </div>
+          </div>
+          <div>
+            <p className="text-[28px] font-[700] mt-[5rem] mb-[2rem] pb-4">Recent blog posts</p>
+            <div className="mb-[]">
+              <Resentpost />
+            </div>
+            <div className="flex items-center justify-center mt-[5rem]"><button className="bg-[#8C0202] text-white rounded-md text-[16px] font-[500] py-[.2rem] px-[2rem]">Load More</button></div>
+          </div>
+        </>
+      )}
+      {query && <p>Showing results for "{query}".</p>}
       {postsPerPage.length ? (
         <>
           <h3 className="post-list-title">{title}</h3>

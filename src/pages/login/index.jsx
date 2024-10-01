@@ -92,7 +92,7 @@ const Login = () => {
             <div className="forget w-full gap-10 flex items-center justify-between">
               <p className='text-[14px] font-[500]'>
                 Do not have an account?
-                <Link to="/signup" style={{color: '#b91c1c'}} className='text-[#b91c1c]'>Sign Up</Link>
+                <Link to="/signup" style={{color: '#b91c1c'}} className='text-[#b91c1c] ml-2'>Sign Up</Link>
               </p>
               <p className='text-red-600 text-[1.4rem]'>
                 <Link to="/forgotPassword" className=''>

@@ -4,7 +4,7 @@ import classes from "./LoadingSpinner.module.css";
 const LoadingSpinner = ({ type }) => {
   return (
     <div
-      className={`${
+      className={`my-4 ${
         type === "full"
           ? `${classes.spinner__boxfull}`
           : `${classes.spinner__box}`

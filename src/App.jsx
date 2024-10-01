@@ -17,6 +17,7 @@ import ResetPassword from "./pages/resetPassword";
 import EmailVerification from "./pages/signup/EmailVerification";
 import Founderseries from "./pages/founderseries/Founderseries";
 import Aboutus from "./pages/aboutus/Aboutus";
+import Blogpost from "./pages/blogpost/Blogpost";
 
 // Dynamic Imports (Lazy - loading)
 const Home = lazy(() => import("./pages/home/Home"));
@@ -54,6 +55,7 @@ const App = () => {
           {/* Nexted Route */}
           <Route path="/posts" element={<PostsHome />}>
             <Route path="" element={<Home />} />
+            <Route path="/posts/blogpost" element={<Blogpost />} />
             <Route path=":postId" element={<PostsHome />}>
               <Route path="" element={<PostDetails />} />
               <Route path="edit" element={<EditPost />} />

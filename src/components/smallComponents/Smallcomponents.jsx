@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Featuredmembers from '../../assets/feauturedmember.png'
 import Topicimage1 from '../../assets/topic1.png'
 import Topicimage2 from '../../assets/topic2.png'
@@ -11,6 +11,11 @@ import './smallcomponents.css'
 import { Link } from "react-router-dom";
 import Button from "../UI/Button";
 import { RxCross2 } from "react-icons/rx";
+import Yusuf from '../../assets/yusuf.png'
+import { CiHeart } from "react-icons/ci";
+import { FaRegCommentDots } from "react-icons/fa";
+import { IoMdHeart } from "react-icons/io";
+import { TfiComment } from "react-icons/tfi";
 
 
 export const Feauturedformembers = () =>{
@@ -245,6 +250,26 @@ export const Footerlinks = ({ links, linktitle }) =>{
                     ))
                 }
             </ul>
+        </div>
+    )
+}
+
+export const Eachcomment = () =>{
+    const [ like, setlike ] = useState(false)
+     return(
+        <div className='mt-16'>
+            {/* <h3 className='text-[20px] font-[600]'>Comments</h3> */}
+            <div className='flex gap-4'>
+              <div className='w-40 h-40'><img src={Yusuf} className="w-full" alt="" /></div>
+              <div className='flex flex-col gap-2'>
+                <p className='text-[16px] font-[500]'>Donald Micheal <span className="text-[11px] ml-2">10 mins ago</span></p>
+                <p className="text-[13px]">Let's get one thing out of the way: you don't norProduct Design. We sat down with Frankie Sullivan to talk about gatekeeping in product design and how anyone can get into this growing industry.</p>
+                <p className='flex items-center gap-5'>
+                  <span className='flex gap-1 text-[13px]'>{!like ? <CiHeart onClick={() => setlike(true)} className='text-[20px]'/> : <IoMdHeart onClick={() => setlike(false)} className='text-[20px] text-red-700'/>}2</span> 
+                  <span className="text-[13px]">Reply</span>
+                </p>
+              </div>
+            </div>
         </div>
     )
 }
