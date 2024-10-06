@@ -18,6 +18,7 @@ import EmailVerification from "./pages/signup/EmailVerification";
 import Founderseries from "./pages/founderseries/Founderseries";
 import Aboutus from "./pages/aboutus/Aboutus";
 import Blogpost from "./pages/blogpost/Blogpost";
+import Profile from "./pages/profile/Profile";
 
 // Dynamic Imports (Lazy - loading)
 const Home = lazy(() => import("./pages/home/Home"));
@@ -72,9 +73,10 @@ const App = () => {
             </Route>
           </Route>
 
-          <Route path="https://lorenzotvmedia.netlify.app/about" element={<Aboutus/>}/>
+          {/* <Route path="/about" element={<Aboutus />}/> */}
 
           <Route path="/founderseries" element={<Founderseries/>}/>
+          <Route path="/profile" element={<Profile />}/>
 
           {/* Routes that will be matched if none of the route(s) is matched */}
           <Route path="*" element={<NotFound />} />

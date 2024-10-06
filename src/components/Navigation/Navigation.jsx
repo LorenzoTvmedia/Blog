@@ -104,7 +104,9 @@ const Navigation = () => {
                       <Link to="/founderseries" className="link">Founder's Series</Link>
                     </li>
                     <li className="signuplist">
-                      <Link to="https://lorenzotvmedia.netlify.app/about" className="link">About us</Link>
+                      <Link 
+                        target="_blank"
+                        to="https://lorenzotvmedia.netlify.app/about" className="link">About us</Link>
                     </li>
                     <li className="signuplist">
                       <Link to="/posts/blogpost" className="link"> Blog Post</Link>
@@ -114,9 +116,9 @@ const Navigation = () => {
                     </li>
                 </ul>
                 <div className="flex items-center space-x-[2rem]">
-                  <span className="">
+                  <Link to='/profile' className="">
                     <IoPersonCircleOutline className="text-[2.5rem] md:text-[#222222] text-white"/>
-                  </span>
+                  </Link>
                   <span className="flex items-center space-x-6">
                         <Button
                           type="button"

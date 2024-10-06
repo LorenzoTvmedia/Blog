@@ -1,0 +1,22 @@
+.profileform{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+}
+.setting{
+    position: relative;
+}
+.setting::before{
+    position: absolute;
+    content: '';
+    bottom: -.3rem;
+    right: 0;
+    width: 100%;
+    background-color: #8C0202;  
+    height: .2rem;
+    transform: scale(0);
+    transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.setting:hover::before{
+    transform: scale(1);
+}
